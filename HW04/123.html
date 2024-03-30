@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>반응형웹 과제</title>
+<style>
+@font-face {
+  font-family: 'DS-DIGIB';
+  src: url('DS-DIGIB.TTF') format('truetype');
+  font-size: large;
+}
+
+.student-id-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-family: 'DS-DIGIB', sans-serif; 
+  font-size: 50px;
+  color: #000;
+}
+
+.input-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.input-container label {
+  font-size: 20px;
+}
+
+.input-container input {
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+.input-container button {
+  font-size: 20px;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+</style>
+</head>
+<body>
+<div class="student-id-container" id="studentIdDisplay"></div>
+<div class="input-container">
+  <label for="studentID">학번 입력:</label>
+  <input type="text" id="studentID">
+  <button onclick="displayStudentID()">학번 표시</button>
+</div>
+
+<script>
+function displayStudentID() {
+  const studentIDInput = document.getElementById('studentID');
+  const studentID = studentIDInput.value.trim(); 
+  const studentIdDisplay = document.getElementById('studentIdDisplay');
+  studentIdDisplay.textContent = studentID;
+}
+</script>
+</body>
+</html>
